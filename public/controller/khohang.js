@@ -13,7 +13,7 @@ var sum_ImportProduct_Microphone = 0;
 var sum_ExportProduct_Microphone = 0;
 
 var table_main = document.querySelector(".table_main");
-var listNavButton = document.querySelectorAll(".list > ul > li > a");
+var listNavButton = document.querySelectorAll(".toggle-btn");
 
 var box_Chart1 = document.querySelector(".box_chart1");
 var box_Chart2 = document.querySelector(".box_chart2");
@@ -60,14 +60,18 @@ async function fetch_AllAPI() {
 function defaultStart() {
     table_main.innerHTML =
     `
-        <tr>
-            <th>Số lượng nhập</th>
-            <th>Số lượng xuất</th>
-        </tr>
-        <tr>
-            <td>${sum_ImportProduct_Camera}</td>
-            <td>${sum_ExportProduct_Camera}</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Số lượng nhập</th>
+                <th>Số lượng xuất</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>${sum_ImportProduct_Camera}</td>
+                <td>${sum_ExportProduct_Camera}</td>
+            </tr>
+        </tbody>
     `;
 
     box_Chart1.innerHTML = 
@@ -75,7 +79,7 @@ function defaultStart() {
         <iframe 
             width="450" 
             height="260" 
-            style="border: 1px solid #cccccc;" 
+            style="border: none;box-shadow: 0 0 10px 2px black" 
             src="https://thingspeak.com/channels/1972647/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Nh%E1%BA%ADp+m%C3%A1y+%E1%BA%A3nh&type=line">
         </iframe>
     `;
@@ -85,7 +89,7 @@ function defaultStart() {
         <iframe 
             width="450" 
             height="260" 
-            style="border: 1px solid #cccccc;" 
+            style="border: none;box-shadow: 0 0 10px 2px black" 
             src="https://thingspeak.com/channels/1972649/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
         </iframe>
     `;
@@ -100,19 +104,20 @@ function ClickListProducts() {
             box_Chart2.innerHTML = ``;
 
             if(index === 0) {
-                listNavButton[0].style.color = "red";
-                listNavButton[1].style.color = "black";
-            
                 table_main.innerHTML =
                 `
-                    <tr>
-                        <th>Số lượng nhập</th>
-                        <th>Số lượng xuất</th>
-                    </tr>
-                    <tr>
-                        <td>${sum_ImportProduct_Camera}</td>
-                        <td>${sum_ExportProduct_Camera}</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Số lượng nhập</th>
+                            <th>Số lượng xuất</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${sum_ImportProduct_Camera}</td>
+                            <td>${sum_ExportProduct_Camera}</td>
+                        </tr>
+                    </tbody>
                 `;
 
                 box_Chart1.innerHTML = 
@@ -120,7 +125,7 @@ function ClickListProducts() {
                     <iframe 
                         width="450" 
                         height="260" 
-                        style="border: 1px solid #cccccc;" 
+                        style="border: none;box-shadow: 0 0 10px 2px black" 
                         src="https://thingspeak.com/channels/1972647/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Nh%E1%BA%ADp+m%C3%A1y+%E1%BA%A3nh&type=line">
                     </iframe>
                 `;
@@ -130,25 +135,25 @@ function ClickListProducts() {
                     <iframe 
                         width="450" 
                         height="260" 
-                        style="border: 1px solid #cccccc;" 
+                        style="border: none;box-shadow: 0 0 10px 2px black" 
                         src="https://thingspeak.com/channels/1972649/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
                     </iframe>
                 `;
-            } else {
-                listNavButton[0].style.color = "black";
-                listNavButton[1].style.color = "red";
-        
-            
+            } else {       
                 table_main.innerHTML =
                 `
-                    <tr>
-                        <th>Số lượng nhập</th>
-                        <th>Số lượng xuất</th>
-                    </tr>
-                    <tr>
-                        <td>${sum_ImportProduct_Microphone}</td>
-                        <td>${sum_ExportProduct_Microphone}</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Số lượng nhập</th>
+                            <th>Số lượng xuất</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${sum_ImportProduct_Microphone}</td>
+                            <td>${sum_ExportProduct_Microphone}</td>
+                        </tr>
+                    </tbody>
                 `;
 
                 box_Chart1.innerHTML = 
@@ -156,7 +161,7 @@ function ClickListProducts() {
                     <iframe 
                         width="450" 
                         height="260" 
-                        style="border: 1px solid #cccccc;" 
+                        style="border: none;box-shadow: 0 0 10px 2px black" 
                         src="https://thingspeak.com/channels/1972648/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
                     </iframe>
 
@@ -167,7 +172,7 @@ function ClickListProducts() {
                     <iframe 
                         width="450" 
                         height="260" 
-                        style="border: 1px solid #cccccc;" 
+                        style="border: none;box-shadow: 0 0 10px 2px black" 
                         src="https://thingspeak.com/channels/1972650/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15">
                     </iframe>
 
@@ -177,16 +182,26 @@ function ClickListProducts() {
     });
 }
 
+setTimeout(async () => {
+    await defaultStart();
+},1000);
 
 window.addEventListener("load", async (event) => {
+    
     // Default load
-    listNavButton[0].style.color = "red";
+    var cardButton = document.querySelectorAll(".card-button")[0];
+    for(let j = 0 ; j < cardButton.children.length ; ++j) {
+        cardButton.children[j].addEventListener("click", (event) => {
+            if(j==1) {
+                cardButton.children[0].style.left = "0";
+            } else if(j==2) {
+                cardButton.children[0].style.left = "150px";
+            }
+        })
+    }
 
     await fetch_AllAPI();
 
-    defaultStart();
-
-        
     // When user click button
     ClickListProducts();
 });

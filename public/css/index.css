@@ -1,0 +1,120 @@
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+    /* img {
+        width: 100%;
+        height: 700px;
+        object-fit: cover;
+    } */
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        background: #0c192c;
+    }
+
+    .container-fluid {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .bubbles {
+        position: relative;
+        display: flex;
+    }
+
+    .bubbles span {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        background: #4fc3dc;
+        margin: 0 4px;
+        border-radius: 50%;
+        box-shadow: 0 0 0 10px #4fc3dc44, 
+        0 0 50px #4fc3dc,
+        0 0 100px #4fc3dc;
+        animation: bubbles 15s linear infinite;
+        animation-duration: calc(125s / var(--i));
+    }
+
+    .bubbles span:nth-child(even) {
+        background: #ff2d75;
+        box-shadow: 0 0 0 10px #ff2d75, 
+        0 0 50px #ff2d75,
+        0 0 100px #ff2d75;
+    }
+
+    @keyframes bubbles {
+        0%
+        {
+            transform: translateY(100vh) scale(0);
+        }
+        100%
+        {
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+
+    .header {
+        width: 100%;
+        height: 4em;
+        position: fixed;
+        text-align: center;
+        background-color: #4fc3dc44;
+        color: white;
+    }
+
+    .header > .navbar {
+        margin-top: 1.5em;
+    }
+
+    .header > .navbar > a {
+        text-decoration: none;
+        color: white;
+        padding: 0 1em;
+        font-size: 18px;
+    }
+
+    .main {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-control-prev {
+        position: absolute;
+        left: 2%;
+        top: 50%;
+        color: white;
+        background-color: rgb(44, 40, 40);
+        width: auto;
+        height: 30px;
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+        cursor: pointer;
+    }
+
+    .carousel-control-prev:hover {
+        opacity: 0.8;
+    }
+
+    .carousel-control-next {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        color: white;
+        background-color: rgb(44, 40, 40);
+        width: auto;
+        height: 30px;
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+        cursor: pointer;
+    }
+
+    .carousel-control-next:hover {
+        opacity: 0.8;
+    }

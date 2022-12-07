@@ -47,7 +47,7 @@ var displayProduct = [];
 var indexDisplayProduct = 0;
 
 var main = document.querySelector('.main');
-var listNavButton = document.querySelectorAll(".list > ul > li > a");
+var listNavButton = document.querySelectorAll(".item-btn");
 
 async function InputProducts(product) {
     let inputPerson = Number(prompt("Nhập số lượng",0));
@@ -109,14 +109,15 @@ function displayProducts(listProducts) {
     displayProduct = listProducts;
     for(let i = 0 ; i < displayProduct.length ; ++i) {
         main.innerHTML += `
-        <div class="card" style="width: 33.33%;">
+        <div class="card" style="width: 33%;">
             <img style="width: 90%;height: 300px;max-height: 300px;max-width: 100%" src="${displayProduct[i].src}" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">${displayProduct[i].name}</p>
             </div>
             <div class="card-button">
-                <button id=${displayProduct[i].id} onClick="InputProducts(displayProduct[${i}])" class="btn_inputProduct">Nhập hàng</button>
-                <button id=${displayProduct[i].id} onClick="OutputProducts(displayProduct[${i}])" class="btn_outputProduct">Xuất hàng</button>
+                <div id="btn"></div>
+                <button id=${displayProduct[i].id} onClick="InputProducts(displayProduct[${i}])" class="btn_inputProduct toggle-btn">Nhập hàng</button>
+                <button id=${displayProduct[i].id} onClick="OutputProducts(displayProduct[${i}])" class="btn_outputProduct toggle-btn">Xuất hàng</button>
             </div>
         </div>
         `;
@@ -125,6 +126,18 @@ function displayProducts(listProducts) {
 
 window.addEventListener("load", (event) => {
     displayProducts(cameraProducts);
+
+    var cardButton = document.querySelectorAll(".card_list_button")[0];
+    for(let j = 0 ; j < cardButton.children.length ; ++j) {
+        cardButton.children[j].addEventListener("click", (event) => {
+            if(j==1) {
+                cardButton.children[0].style.left = "0";
+            } else if(j==2) {
+                cardButton.children[0].style.left = "150px";
+            }
+        })
+    }
+
 
     for(let i = 0 ; i < listNavButton.length ; ++i) {
         listNavButton[i].addEventListener("click", () => {
@@ -140,18 +153,4 @@ window.addEventListener("load", (event) => {
             }
         })
     }
-
-    listNavButton[0].style.color = "red";
-
-    listNavButton.forEach((btn,index) => {
-        btn.addEventListener("click", (event) => {
-            if(index === 0) {
-                listNavButton[0].style.color = "red";
-                listNavButton[1].style.color = "black";
-            } else {
-                listNavButton[0].style.color = "black";
-                listNavButton[1].style.color = "red";
-            }
-        })
-    });
 });
