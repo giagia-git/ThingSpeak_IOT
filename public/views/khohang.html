@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="index.html">Trang chủ</a>
+                  <a class="navbar-brand" href="sanpham.html">Sản phẩm</a>
+                  <a class="navbar-brand" href="#">Liên hệ</a>
+                  <a class="navbar-brand" href="khohang.html">Kho hàng</a>
+            </nav>
+        </div>
+
+        <div class="row list">
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="list_camera" class="nav-link" href="#">Máy ảnh</a>
+                </li>
+                <li class="nav-item">
+                  <a class="list_microphone" class="nav-link" href="#">Tai nghe</a>
+                </li>
+              </ul>
+        </div>
+
+        <div class="row main">
+            <div class="main_left">
+                <table class="table_main">
+
+                </table>
+
+                <div class="box_chart1">
+                    <!-- <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1972647/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Nh%E1%BA%ADp+m%C3%A1y+%E1%BA%A3nh&type=line"></iframe> -->
+                </div>
+                <div class="box_chart2">
+                    <!-- <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1972647/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Nh%E1%BA%ADp+m%C3%A1y+%E1%BA%A3nh&type=line"></iframe> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script defer src="../controller/khohang.js"></script>
+</html>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .header {
+        width: 100%;
+        height: 4em;
+        position: fixed;
+        text-align: center;
+        background-color: rgb(44, 40, 40);
+        opacity: 0.8;
+        color: white;
+        z-index: 100;
+    }
+
+    .header > .navbar {
+        margin-top: 1.5em;
+    }
+
+    .header > .navbar > a {
+        text-decoration: none;
+        color: white;
+        padding: 0 1em;
+        font-size: 18px;
+    }
+
+    /* Box */
+    .box {
+        margin-top: 4em;
+        position: absolute;
+        left: 40%;
+        padding: 1em;
+    }
+
+    .box > input {
+        /* width: 15em; */
+        padding: 5px;
+    }
+
+    .box > button {
+        /* width: auto; */
+        padding: 5px;
+    }
+
+    /* List */
+    .list {
+        margin-top: 5em;
+        position: absolute;
+        left: 40%;
+        padding: 1em;
+    }
+
+    .list > ul {
+        position: relative;
+    }
+
+    .list > ul > li {
+        float: left;
+        padding: 1em;
+        list-style: none;
+    }
+
+    .list > ul > li > a {
+        text-decoration: none;
+    }
+
+
+
+    /* Main */
+    .main {
+        position: absolute;
+        width: 100%;
+        margin-top: 12em;
+        height: auto;
+        /* background-color: rgb(233, 225, 225); */
+    }
+
+    .main_left {
+        width: 100%;
+        height: auto;
+        position: relative;
+        float: left;
+    }
+
+    .box_chart1 {
+        width: 50%;
+        position: relative;
+        float: left;
+        text-align: center;
+    }
+
+    .box_chart2 {
+        width: 50%;
+        position: relative;
+        float: left;
+        text-align: center;
+    }
+
+
+    /* Table */
+
+    .table_main {
+        width: 100%;
+        border: 0;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border-color: #515353;
+    }
+
+    tr {
+        width: 100%;
+        height: auto;
+    }
+
+    th {
+        text-align: center;
+        width: 50%;
+        height: auto;
+        padding: 10px 0;
+        background-color: rgb(250, 243, 243);
+    }
+
+    td {
+        text-align: center;
+        width: 50%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+</style>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="index.html">Trang chủ</a>
+                  <a class="navbar-brand" href="sanpham.html">Sản phẩm</a>
+                  <a class="navbar-brand" href="#">Liên hệ</a>
+                  <a class="navbar-brand" href="khohang.html">Kho hàng</a>
+            </nav>
+        </div>
+
+        <!-- <div class="row search">
+            <div class="box">
+                <input type="text" class="" placeholder="s' username" aria-label="">
+                <button type="button" class="btn">Secondary</button>
+            </div>
+        </div> -->
+
+        <div class="row list">
+            <ul class="nav">
+                <li class="nav-item">
+                  <a class="list_camera" class="nav-link" href="#">Máy ảnh</a>
+                </li>
+                <li class="nav-item">
+                  <a class="list_microphone" class="nav-link" href="#">Tai nghe</a>
+                </li>
+              </ul>
+        </div>
+
+        <div class="row main">
+ 
+        </div>
+    </div>
+</body>
+
+<script defer src="../controller/sanpham.js"></script>
+</html>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .header {
+        width: 100%;
+        height: 4em;
+        position: fixed;
+        text-align: center;
+        background-color: rgb(44, 40, 40);
+        opacity: 0.8;
+        color: white;
+        z-index: 100;
+    }
+
+    .header > .navbar {
+        margin-top: 1.5em;
+    }
+
+    .header > .navbar > a {
+        text-decoration: none;
+        color: white;
+        padding: 0 1em;
+        font-size: 18px;
+    }
+
+    /* Box */
+    .box {
+        margin-top: 4em;
+        position: absolute;
+        left: 40%;
+        padding: 1em;
+    }
+
+    .box > input {
+        /* width: 15em; */
+        padding: 5px;
+    }
+
+    .box > button {
+        /* width: auto; */
+        padding: 5px;
+    }
+
+    /* List */
+    .list {
+        margin-top: 5em;
+        position: absolute;
+        left: 40%;
+        padding: 1em;
+    }
+
+    .list > ul {
+        position: relative;
+    }
+
+    .list > ul > li {
+        float: left;
+        padding: 1em;
+        list-style: none;
+    }
+
+    .list > ul > li > a {
+        text-decoration: none;
+    }
+
+    /* Main */
+    .main {
+        position: absolute;
+        width: 100%;
+        margin-top: 12em;
+        height: auto;
+    }
+
+    /* Card */
+
+    .card {
+        float: left;
+        text-align: center;
+    }
+
+    .card-body {
+        margin: 5px 0;
+        padding: 5px;
+    }
+
+    .card-button {
+        margin: 10px 0;
+    }
+
+    .btn_inputProduct {
+        border: none;
+        padding: 1em;
+        background-color: rgb(73, 230, 73);
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    .btn_outputProduct {
+        border: none;
+        padding: 1em;
+        background-color: rgb(206, 200, 200);
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.9;
+    }
+</style>
