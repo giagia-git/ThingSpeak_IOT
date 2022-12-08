@@ -6,10 +6,16 @@
     box-sizing: border-box;
 }
 
+img {
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .4);
+}   
+
 
 body {
     min-height: 100vh;
-    background: #0c192c;
+    background: #ff7979;
 }
 
 .container-fluid {
@@ -22,6 +28,7 @@ body {
 .bubbles {
     position: relative;
     display: flex;
+    opacity: 0;
 }
 
 .bubbles span {
@@ -61,20 +68,40 @@ body {
     height: 4em;
     position: fixed;
     text-align: center;
-    background-color: #4fc3dc44;
+    background-color: #01040544;
     color: white;
     z-index: 100;
+    opacity: 0;
 }
 
-.header > .navbar {
+.header .navbar {
     margin-top: 1.5em;
 }
 
-.header > .navbar > a {
+.header .navbar a {
+    position: relative;
     text-decoration: none;
     color: white;
     padding: 0 1em;
     font-size: 18px;
+    letter-spacing: 1px;
+    padding: 0 10px;
+    margin: 0 10px;
+}
+
+.header .navbar a::after {
+    content: "";
+    position: absolute;
+    background: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
 }
 
 /* Box */
@@ -101,6 +128,7 @@ body {
     position: absolute;
     left: 40%;
     padding: 1em;
+    opacity: 0;
 }
 
 .list > ul {
@@ -123,6 +151,7 @@ body {
     width: 100%;
     margin-top: 10em;
     height: auto;
+    opacity: 0;
 }
 
 /* Card */
@@ -146,7 +175,7 @@ body {
 }
 
 .card-text {
-    color: white;
+    color: black;
     font-size: 17px;
     margin: 10px 0;
 }
@@ -219,4 +248,50 @@ body::-webkit-scrollbar-track {
     height: 100%;
     background: #009879;
     border-radius: 30px;
+}
+
+/* Loading */
+
+.center {
+    display: flex; 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 200;
+    overflow: hidden;
+    transition: 1.5s;
+}
+
+.outer {
+    height: 200px;
+    width: 200px;
+    background: linear-gradient(135deg, #ffed07 0%, #fe6a50, #ed00aa 50%, #8900FF 100%);
+    border-radius: 50%;
+    animation: rotate 2s ease infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.inner {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    text-align: center;
+    line-height: 190px;
+    border-radius: 50%;
+    background: #ff7979;
+}
+
+.inner span {
+    font-size: 30px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffed07 0%, #fe6a50, #ed00aa 50%, #8900FF 100%);
+    color: black;
+    background-size: 300%;
+    -webkit-background-clip: text;
 }

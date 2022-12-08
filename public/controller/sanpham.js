@@ -1,45 +1,45 @@
 var cameraProducts = [
     {
         id: 1,
-        src: "../img/camera/1.jpeg",
+        src: "https://images.pexels.com/photos/7947303/pexels-photo-7947303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Sony 123',
         type: "camera",
         price: 123
     },
     {
         id: 2,
-        src: "../img/camera/2.jpg",
+        src: "https://images.pexels.com/photos/9374148/pexels-photo-9374148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Sony 456',
         type: "camera",
         price: 123
     },
     {
         id: 3,
-        src: "../img/camera/3.png",
+        src: "https://images.pexels.com/photos/7961670/pexels-photo-7961670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Sony 789',
         type: "camera",
         price: 123
     }
 ];
 
-var microphoneProducts = [
+var headphoneProducts = [
     {
         id: 1,
-        src: "../img/microphone/1.jpeg",
+        src: "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Tai nghe Hyper X',
-        type: "microphone"
+        type: "headphone"
     },
     {
         id: 2,
-        src: "../img/microphone/2.jpg",
+        src: "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Tai nghe Sony',
-        type: "microphone"
+        type: "headphone"
     },
     {
         id: 3,
-        src: "../img/microphone/3.jpeg",
+        src: "https://images.pexels.com/photos/1337753/pexels-photo-1337753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         name: 'Tai nghe Asus',
-        type: "microphone"
+        type: "headphone"
     }
 ];
 
@@ -63,10 +63,10 @@ async function InputProducts(product) {
                     throw err;
                 }
                 break;
-            case "microphone" :
-                let inputMicrophone = `https://api.thingspeak.com/update?api_key=V6ADRDYGAL9B40SJ&field1=${inputPerson}`;
+            case "headphone" :
+                let inputHeadphone = `https://api.thingspeak.com/update?api_key=V6ADRDYGAL9B40SJ&field1=${inputPerson}`;
                 try {
-                    const res = await axios.get(inputMicrophone);
+                    const res = await axios.get(inputHeadphone);
                 } catch(err) {
                     throw err;
                 }
@@ -91,10 +91,10 @@ async function OutputProducts(product) {
                     throw err;
                 }
                 break;
-            case "microphone" :
-                let inputMicrophone = `https://api.thingspeak.com/update?api_key=ZL34H067P0ZXOOOX&field1=${inputPerson}`;
+            case "headphone" :
+                let inputHeadphone = `https://api.thingspeak.com/update?api_key=ZL34H067P0ZXOOOX&field1=${inputPerson}`;
                 try {
-                    const res = await axios.get(inputMicrophone);
+                    const res = await axios.get(inputHeadphone);
                 } catch(err) {
                     throw err;
                 }
@@ -125,6 +125,27 @@ function displayProducts(listProducts) {
 }
 
 window.addEventListener("load", (event) => {
+
+    // Logic Loading
+    let loading = setInterval(animate, 20);
+    function animate() {
+        if(count == 100) {
+            clearInterval();
+
+            bg_bubbles.style.opacity = "1";
+            bg_header.style.opacity = "1";
+            bg_main.style.opacity = "1";
+            bg_list.style.opacity = "1";
+
+            bg_body.style.backgroundColor = "#ff7979";
+            bg_item_inner.style.backgroundColor = "#ff7979";
+            center_loading.style.display = "none";
+        } else {
+            count += 1;
+            persent.textContent = count + "%";
+        }
+    };
+
     displayProducts(cameraProducts);
 
     var cardButton = document.querySelectorAll(".card_list_button")[0];
@@ -148,9 +169,23 @@ window.addEventListener("load", (event) => {
                     displayProducts(cameraProducts);
                     break;
                 case 1 :
-                    displayProducts(microphoneProducts);
+                    displayProducts(headphoneProducts);
                     break;
             }
         })
     }
 });
+
+// Loading
+let center_loading = document.querySelector(".center");
+let outer = document.querySelector(".outer");
+let inner = document.querySelector(".inner");
+let persent = document.querySelector(".inner span");
+let count = 0;
+
+let bg_body = document.querySelector("body");
+let bg_bubbles = document.querySelector(".bubbles");
+let bg_header = document.querySelector(".header");
+let bg_item_inner = document.querySelector(".inner");
+let bg_main = document.querySelector(".main");
+let bg_list = document.querySelector(".list");

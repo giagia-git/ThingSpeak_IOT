@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành viên</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="../css/thanhvien.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="bubbles">
+          <span style="--i:11;"></span>
+          <span style="--i:12;"></span>
+          <span style="--i:24;"></span>
+          <span style="--i:14;"></span>
+          <span style="--i:10;"></span>
+          <span style="--i:23;"></span>
+          <span style="--i:18;"></span>
+          <span style="--i:20;"></span>
+          <span style="--i:19;"></span>
+          <span style="--i:15;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:18;"></span>
+          <span style="--i:21;"></span>
+          <span style="--i:25;"></span>
+          <span style="--i:19;"></span>
+          <span style="--i:13;"></span>
+          <span style="--i:16;"></span>
+          <span style="--i:20;"></span>
+          <span style="--i:17;"></span>
+          <span style="--i:21;"></span>
+          <span style="--i:23;"></span>
+          <span style="--i:25;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:13;"></span>
+          <span style="--i:19;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:12;"></span>
+          <span style="--i:24;"></span>
+          <span style="--i:14;"></span>
+          <span style="--i:10;"></span>
+          <span style="--i:23;"></span>
+          <span style="--i:18;"></span>
+          <span style="--i:20;"></span>
+          <span style="--i:19;"></span>
+          <span style="--i:15;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:18;"></span>
+          <span style="--i:21;"></span>
+          <span style="--i:25;"></span>
+          <span style="--i:19;"></span>
+          <span style="--i:13;"></span>
+          <span style="--i:16;"></span>
+          <span style="--i:20;"></span>
+          <span style="--i:17;"></span>
+          <span style="--i:21;"></span>
+          <span style="--i:23;"></span>
+          <span style="--i:25;"></span>
+          <span style="--i:11;"></span>
+          <span style="--i:13;"></span>
+          <span style="--i:19;"></span>
+      </div>
+
+        <div class="row header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <a class="navbar-brand" href="../../index.html">Trang chủ</a>
+                  <a class="navbar-brand" href="./sanpham.html">Sản phẩm</a>
+                  <a class="navbar-brand" href="./lienhe.html">Liên hệ</a>
+                  <a class="navbar-brand" href="#">Thành viên</a>
+                  <a class="navbar-brand" href="./khohang.html">Kho hàng</a>
+            </nav>
+        </div>
+
+        <div class="row main">
+            <div class="slides-container">
+                <span class="slides-div-span" id="slides-span1"></span>
+                <span class="slides-div-span" id="slides-span2"></span>
+                <span class="slides-div-span" id="slides-span3"></span>
+                <span class="slides-div-span" id="slides-span4"></span>
+                <span class="slides-div-span" id="slides-span5"></span>
+                <span class="slides-div-span" id="slides-span6"></span>
+
+                <div class="image-slider">
+                    <div class="slides-div" id="slide-1">
+                        <img src="../img/thanhvien/1.jpg" alt="" class="img" 
+                        id="img1">
+                        <a href="#slider-span1" class="button" 
+                        id="button-1"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-2">
+                        <img src="../img/thanhvien/2.jpg" alt="" class="img" 
+                        id="img2">
+                        <a href="#slider-span2" class="button" 
+                        id="button-2"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-3">
+                        <img src="../img/thanhvien/3.jpg" alt="" class="img" 
+                        id="img3">
+                        <a href="#slider-span3" class="button" 
+                        id="button-3"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-4">
+                        <img src="../img/thanhvien/4.jpg" alt="" class="img" 
+                        id="img4">
+                        <a href="#slider-span4" class="button" 
+                        id="button-4"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-5">
+                        <img src="../img/thanhvien/2.jpg" alt="" class="img" 
+                        id="img5">
+                        <a href="#slider-span5" class="button" 
+                        id="button-5"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+
+                    <div class="slides-div" id="slide-6">
+                        <img src="../img/thanhvien/3.jpg" alt="" class="img" 
+                        id="img6">
+                        <a href="#slider-span6" class="button" 
+                        id="button-6"></a>
+                        <div class="intro">
+                            <h1>Nguyễn Văn A</h1>
+                            <p>The <span>Nguyễn Văn A</span> là sinh viên khoa Công nghiệp thuộc Đại học Bách Khoa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="outer"></div>
+            <div class="inner">
+                <span>100%</span>
+            </div>
+          </div>
+    </div>
+</body>
+
+<script defer src="../controller/thanhvien.js"></script>
+</html>
